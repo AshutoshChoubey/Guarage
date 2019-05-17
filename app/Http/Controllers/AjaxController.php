@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\WorkshopsWithoutgst;
 use Illuminate\Http\Request;
 use App\Product;
 use App\Purchase;
@@ -418,6 +418,87 @@ class AjaxController extends Controller
                }
          }      
     }
+    public function paymentForWorkshopwithoutGst(Request $request)
+    {
+        $creditDebitForWorkshop=$request->creditDebitForWorkshop;
+        $workshopIdForPayment=$request->workshopIdForPayment;
+        $amountForWorkshop=$request->amountForWorkshop;
+        $payment_dateForWorkhop=$request->payment_dateForWorkhop;
+        $payment_typeForWorkshop=$request->payment_typeForWorkshop;
+        $commentsForWorkshop=$request->commentsForWorkshop;
+       // $workshopDetail =DB::table('workshops')->join('customer','workshops.customer_id','=','customer.id')->get();
+
+        $workshopDetail = DB::table('workshops_withoutgsts');
+        $workshopDetail=  $workshopDetail->leftJoin('customers','workshops_withoutgsts.customer_id','=','customers.id')->where('workshops_withoutgsts.id','=',$workshopIdForPayment)->select('customers.id','installmentPayment','grandTotal','balance_price')->get();
+        // echo    " else if (".(int)$workshopDetail[0]->balance_price."<".(int)$amountForWorkshop.") {";
+        if($workshopDetail[0]->balance_price>=0 && $amountForWorkshop>=0)
+        {
+            if(($workshopDetail[0]->grandTotal)<($amountForWorkshop))
+            {
+                return "Payment Amount Can not be greater than GrandTotal";
+            }
+            else if ((int)$workshopDetail[0]->balance_price<(int)$amountForWorkshop) {
+                return "Payment Amount Can not be greater than Balance";
+            }
+             WorkshopsWithoutgst::where('id', $workshopIdForPayment)
+              ->update(['installmentPayment' => $amountForWorkshop+$workshopDetail[0]->installmentPayment ]);
+                $saveSupplierDebitLog = new CustomerDebitLog;
+                $saveSupplierDebitLog->customer_id =$workshopDetail[0]->id;
+                $saveSupplierDebitLog->workshop_id =$workshopIdForPayment;
+                $saveSupplierDebitLog->created_at =$request->payment_dateForWorkhop;
+                if($request->creditDebitForWorkshop==0)
+                {
+                     $saveSupplierDebitLog->credit = $amountForWorkshop;
+                }
+                else
+                {
+                    $saveSupplierDebitLog->debit_amount = $amountForWorkshop; 
+                }
+                $saveSupplierDebitLog->is_debit =$creditDebitForWorkshop;           
+                $saveSupplierDebitLog->comments =$commentsForWorkshop;
+                $saveSupplierDebitLog->payment_type = $payment_typeForWorkshop;
+               if($saveSupplierDebitLog->save())
+               {
+
+               //  Mail::to($request->email)->send(new SendMailToCustomer($PartyManage->id));
+                return 1;
+               }
+               else
+               {
+                return 0;
+               }
+        }        
+        else
+        {
+            WorkshopsWithoutgst::where('id', $workshopIdForPayment)
+              ->update(['installmentPayment' => $amountForWorkshop+$workshopDetail[0]->installmentPayment ]);
+                $saveSupplierDebitLog = new CustomerDebitLog;
+                $saveSupplierDebitLog->customer_id =$workshopDetail[0]->id;
+                $saveSupplierDebitLog->workshop_id =$workshopIdForPayment;
+                $saveSupplierDebitLog->created_at =$request->payment_dateForWorkhop;
+                if($request->creditDebitForWorkshop==0)
+                {
+                     $saveSupplierDebitLog->credit = $amountForWorkshop;
+                }
+                else
+                {
+                    $saveSupplierDebitLog->debit_amount = $amountForWorkshop; 
+                }
+                $saveSupplierDebitLog->is_debit =$creditDebitForWorkshop;           
+                $saveSupplierDebitLog->comments =$commentsForWorkshop;
+                $saveSupplierDebitLog->payment_type = $payment_typeForWorkshop;
+               if($saveSupplierDebitLog->save())
+               {
+
+               //  Mail::to($request->email)->send(new SendMailToCustomer($PartyManage->id));
+                return 1;
+               }
+               else
+               {
+                return 0;
+               }
+         }       
+    }
     public function  updateWorkshopBalance(Request $request)
     {
          if(Workshop::where('id', $request->workshop_id)->update(['balance_price' => $request->balance,'grandTotal' => $request->grandTotal]))
@@ -429,6 +510,17 @@ class AjaxController extends Controller
             return 0;
          }
 
+    }
+    public function updateWorkshopBalanceWithoutGst(Request $request)
+    {
+       if(WorkshopsWithoutgst::where('id', $request->workshop_id)->update(['balance_price' => $request->balance,'grandTotal' => $request->grandTotal]))
+         {
+            return 1;
+         } 
+         else
+         {
+            return 0;
+         } 
     }
     public function  discountForWorkshop(Request $request)
     {

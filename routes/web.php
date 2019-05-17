@@ -49,6 +49,19 @@ Route::middleware('auth')->group(function() {
  Route::get('/SaiAutoCare/workshop/view/{id}','WorkshopController@viewIndivisual'); 
  // Wokshop :stop
 
+ // Workshop :start
+ Route::get('/SaiAutoCare/workshopWTax/add','WorkshopProductWithoutgstController@save');
+ Route::get('/SaiAutoCare/workshopWTax/add/{id}','WorkshopProductWithoutgstController@save');
+ Route::post('/SaiAutoCare/workshopWTax/add','WorkshopProductWithoutgstController@save');
+ Route::get('/SaiAutoCare/workshopWTax/search','WorkshopProductWithoutgstController@view');
+ Route::post('/SaiAutoCare/workshopWTax/search','WorkshopProductWithoutgstController@view');
+ Route::post('/SaiAutoCare/workshopWTax/update','WorkshopProductWithoutgstController@save');
+ Route::get('/SaiAutoCare/workshopWTax/trash/{id}','WorkshopProductWithoutgstController@trash');
+ Route::get('/SaiAutoCare/workshopWTax/delete','WorkshopProductWithoutgstController@trashedList');
+ Route::get('/SaiAutoCare/workshopWTax/delete/{id}','WorkshopProductWithoutgstController@permanemetDelete');
+ Route::get('/SaiAutoCare/workshopWTax/view/{id}','WorkshopProductWithoutgstController@viewIndivisual'); 
+ // Wokshop :stop
+
  // Estimation :start
  Route::get('/SaiAutoCare/estimation/add','AstimateController@save');
  Route::get('/SaiAutoCare/estimation/add/{id}','AstimateController@save');
@@ -249,7 +262,8 @@ Route::post('/ajax/getWorkshopReport','AjaxController@getWorkshopReport');
 Route::post('/ajax/paymentForWorkshop','AjaxController@paymentForWorkshop');
 Route::post('/ajax/updateWorkshopBalance','AjaxController@updateWorkshopBalance');
 Route::post('/ajax/discountForWorkshop','AjaxController@discountForWorkshop');
-
+Route::post('/ajax/paymentForWorkshopwithoutGst','AjaxController@paymentForWorkshopwithoutGst');
+Route::post('/ajax/updateWorkshopBalanceWithoutGst','AjaxController@updateWorkshopBalanceWithoutGst');
 
 // End: Ajax Related 
 

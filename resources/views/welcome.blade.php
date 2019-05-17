@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Guarage Demo
+                    Dynamic Auto Mobile
                 </div>
 
                 <!-- <div class="links">

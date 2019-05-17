@@ -15,14 +15,14 @@
   <button class="navbar-toggler mobile-sidebar-toggler d-lg-none mr-auto" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <a  href="#"><div style="width:100%;" class="logo"><b><i> Guarage Auto mobile</i></b></div></a>
+  <a  href="#"><div style="width:100%;" class="logo"><b><i> Dynamic Auto Mobile</i></b></div></a>
   <button class="navbar-toggler sidebar-toggler d-md-down-none" type="button">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <ul class="nav navbar-nav d-md-down-none"> 
     <li class="nav-item px-3">
-      <a class="nav-link" href="/">Guarage Demo</i></a>
+      <a class="nav-link" href="/">Dynamic Auto Mobile</i></a>
     </li>
 {{-- 
     <li class="nav-item px-3">

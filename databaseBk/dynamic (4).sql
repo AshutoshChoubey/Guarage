@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 15, 2019 at 08:59 AM
+-- Generation Time: May 17, 2019 at 03:45 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.1
 
@@ -88,7 +88,10 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`id`, `customer_name`, `customer_contact_number`, `customer_alt_number`, `customer_email`, `customer_address`, `customer_gstin`, `created_by`, `status`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 'Ashutosh Kumar Choubey', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', '345', 1, 1, '2019-04-13 06:37:50', '2019-04-13 06:37:50', NULL);
+(1, 'Ashutosh Kumar Choubey', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', '345', 1, 1, '2019-04-13 06:37:50', '2019-04-13 06:37:50', NULL),
+(2, 'fgdgf', NULL, NULL, NULL, NULL, NULL, 1, 1, '2019-04-17 00:25:35', '2019-04-17 00:25:35', NULL),
+(3, 'wiswa', '34534534534', '45345345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkumarchoubey@gmail,com\r\nplot No-GA,430 Chandrasekharpur, Axis Bank ATM, Sailashree Vihar', '34534dgdg', 1, 1, '2019-04-17 05:54:10', '2019-04-17 05:54:10', NULL),
+(4, 'Mohit Mona', '66553', '35345', 'fdhdfh@dfh.dgd', 'dfgdf', 'g4535', 1, 1, '2019-04-18 00:00:02', '2019-04-18 00:00:02', NULL);
 
 -- --------------------------------------------------------
 
@@ -119,7 +122,23 @@ INSERT INTO `customer_debit_logs` (`id`, `customer_id`, `workshop_id`, `sale_id`
 (1, 1, 1, NULL, NULL, 23.0000, 0, 'dfg', NULL, '2019-04-13 06:37:50', '2019-04-13 06:37:50', NULL),
 (2, 1, NULL, 2, NULL, 0.0000, 0, NULL, NULL, '2019-04-13 06:42:46', '2019-04-13 06:42:46', NULL),
 (3, 1, NULL, 3, NULL, 0.0000, 0, NULL, NULL, '2019-04-13 07:00:43', '2019-04-13 07:00:43', NULL),
-(4, 1, 4, NULL, NULL, 0.0000, 0, 'dfg', NULL, '2019-04-13 07:06:57', '2019-04-13 07:06:57', NULL);
+(4, 1, 4, NULL, NULL, 0.0000, 0, 'dfg', NULL, '2019-04-13 07:06:57', '2019-04-13 07:06:57', NULL),
+(5, 1, 5, NULL, NULL, 43.0000, 0, 'dfg', NULL, '2019-04-16 23:57:36', '2019-04-16 23:57:36', NULL),
+(6, 2, 6, NULL, NULL, 0.0000, 0, 'dfg', NULL, '2019-04-17 00:25:35', '2019-04-17 00:25:35', NULL),
+(7, 1, 9, NULL, NULL, 0.0000, 0, 'dfg', NULL, '2019-04-17 00:31:09', '2019-04-17 00:31:09', NULL),
+(8, 2, 1, NULL, NULL, 0.0000, 0, 'dfg', NULL, '2019-04-17 00:44:18', '2019-04-17 00:44:18', NULL),
+(9, 2, 2, NULL, NULL, 0.0000, 0, 'dfg', NULL, '2019-04-17 00:54:00', '2019-04-17 00:54:00', NULL),
+(10, 2, 3, NULL, NULL, 34.0000, 0, 'dfg', NULL, '2019-04-17 02:05:27', '2019-04-17 02:05:27', NULL),
+(11, 2, 3, NULL, NULL, 56.0000, 0, 'sf', 1, '2019-04-17 04:51:51', '2019-04-17 04:51:51', NULL),
+(12, 2, 3, NULL, NULL, 59.0000, 0, 'dfgdf', 1, '2019-04-17 04:52:57', '2019-04-17 04:52:57', NULL),
+(13, 2, 3, NULL, NULL, 56.0000, 0, NULL, 1, '2019-04-17 04:54:55', '2019-04-17 04:54:55', NULL),
+(14, 2, 2, NULL, NULL, 8.0000, 0, 'testing', 1, '2019-04-17 05:30:24', '2019-04-17 05:30:24', NULL),
+(15, 2, 2, NULL, NULL, 10.0000, 0, 'dgdf', 1, '2019-04-17 05:31:42', '2019-04-17 05:31:42', NULL),
+(16, 2, 2, NULL, NULL, 10.0000, 0, 'dgdf', 1, '2019-04-17 05:31:42', '2019-04-17 05:31:42', NULL),
+(17, 3, 4, NULL, NULL, 45.0000, 0, 'dfg', NULL, '2019-04-17 05:54:11', '2019-04-17 05:54:11', NULL),
+(18, 3, 5, NULL, NULL, 234.0000, 0, 'dfg', NULL, '2019-04-17 05:57:44', '2019-04-17 05:57:44', NULL),
+(19, 2, 6, NULL, NULL, 0.0000, 0, 'dfg', NULL, '2019-04-17 06:01:35', '2019-04-17 06:01:35', NULL),
+(20, 4, 7, NULL, NULL, 300.0000, 0, 'df', NULL, '2019-04-18 00:00:03', '2019-04-18 00:00:03', NULL);
 
 -- --------------------------------------------------------
 
@@ -440,8 +459,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`id`, `product_name`, `company_name`, `model_number`, `hsn`, `unit_price`, `unit_price_exit`, `sgst`, `cgst`, `igst`, `gst`, `discount_value`, `stock_in`, `stock_out`, `stock_available`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 'bike', '1', '1', '324', 100.00, 200.00, 2.00, 3.00, 2.00, 7.00, 2.00, 10.00, 8.00, -25.00, NULL, '2019-04-13 06:31:57', '2019-04-13 07:06:57'),
-(2, 'ergre', '2', '2', 'NA', 100.00, 200.00, 9.00, 9.00, 0.00, 18.00, 1.00, 0.00, 0.00, 0.00, NULL, '2019-04-13 09:45:05', '2019-04-13 09:45:05');
+(1, 'bike', '1', '1', '324', 100.00, 200.00, 2.00, 3.00, 2.00, 7.00, 2.00, 455.00, 44.00, -71.00, NULL, '2019-04-13 06:31:57', '2019-04-18 00:00:02'),
+(2, 'ergre', '2', '2', 'NA', 100.00, 200.00, 9.00, 9.00, 0.00, 18.00, 1.00, 234.00, 36.00, -46.00, NULL, '2019-04-13 09:45:05', '2019-04-18 00:00:02'),
+(3, 'ffffff', '1', '1', '23GFGHHG', 1000.00, 2000.00, 2.00, 3.00, 13.00, 18.00, 4.00, 0.00, 0.00, 0.00, NULL, '2019-04-17 23:56:58', '2019-04-17 23:56:58');
 
 -- --------------------------------------------------------
 
@@ -506,7 +526,10 @@ CREATE TABLE `purchases` (
 
 INSERT INTO `purchases` (`id`, `user_id`, `supplier_name`, `purchase_invoice_id`, `bill_num`, `bill_date`, `product_id`, `company_name`, `purchase_discription`, `model_number`, `part_number`, `discription`, `hsn`, `unit_price`, `unit_price_exit`, `quantity`, `gst`, `discount`, `total_amount`, `is_returned`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, 1, '1', 1, '34534', '2019-04-13', 1, '1', 'dfg', '1', '345', '345', '324', 100.000000, 200.000000, 5.000000, 7.000000, NULL, 535.000000, 1, NULL, '2019-04-13 06:32:26', '2019-04-13 06:34:03'),
-(2, 1, '1', 2, '34534', '2019-04-13', 1, '1', 'dfg', '1', 'fdg', 'dfg', '324', 100.000000, 200.000000, 5.000000, 7.000000, NULL, 535.000000, 1, NULL, '2019-04-13 06:59:42', '2019-04-13 07:01:45');
+(2, 1, '1', 2, '34534', '2019-04-13', 1, '1', 'dfg', '1', 'fdg', 'dfg', '324', 100.000000, 200.000000, 5.000000, 7.000000, NULL, 535.000000, 1, NULL, '2019-04-13 06:59:42', '2019-04-13 07:01:45'),
+(3, 1, '1', 3, '35345', '2019-04-16', 2, '2', 'dgdfg', '2', '435', 'dfg', 'NA', 100.000000, 200.000000, 234.000000, 18.000000, NULL, 27612.000000, 0, NULL, '2019-04-17 05:55:17', '2019-04-17 05:55:17'),
+(4, 1, '1', 3, '35345', '2019-04-16', 1, '1', 'dgdfg', '1', 'sf', 'sf', '324', 100.000000, 200.000000, 435.000000, 7.000000, NULL, 46545.000000, 0, NULL, '2019-04-17 05:55:17', '2019-04-17 05:55:17'),
+(5, 1, '1', 4, '45dfg', '2019-04-17', 1, '1', 'fdsf', '1', '5fghdfg', '56dfg', '324', 100.000000, 200.000000, 10.000000, 7.000000, NULL, 1070.000000, 0, NULL, '2019-04-17 23:57:45', '2019-04-17 23:57:45');
 
 -- --------------------------------------------------------
 
@@ -537,7 +560,9 @@ CREATE TABLE `purchase_invoices` (
 
 INSERT INTO `purchase_invoices` (`id`, `supplier_id`, `purchase_invoice_number`, `purchase_invoice_date`, `purchase_invoice_amount`, `purchase_discription`, `payment_type`, `total_purchase_amount`, `purchase_due_amount`, `satus`, `user_id`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, '34534', '2019-04-13', NULL, 'dfg', NULL, NULL, NULL, 1, 1, '2019-04-13 06:32:26', '2019-04-13 06:32:26', NULL),
-(2, 1, '34534', '2019-04-13', NULL, 'dfg', NULL, NULL, NULL, 1, 1, '2019-04-13 06:59:42', '2019-04-13 06:59:42', NULL);
+(2, 1, '34534', '2019-04-13', NULL, 'dfg', NULL, NULL, NULL, 1, 1, '2019-04-13 06:59:42', '2019-04-13 06:59:42', NULL),
+(3, 1, '35345', '2019-04-16', NULL, 'dgdfg', NULL, NULL, NULL, 1, 1, '2019-04-17 05:55:17', '2019-04-17 05:55:17', NULL),
+(4, 1, '45dfg', '2019-04-17', NULL, 'fdsf', NULL, NULL, NULL, 1, 1, '2019-04-17 23:57:45', '2019-04-17 23:57:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -662,7 +687,8 @@ CREATE TABLE `services` (
 
 INSERT INTO `services` (`id`, `service_type`, `service_name`, `brand_name`, `model_name`, `price`, `service_sgst`, `service_cgst`, `service_igst`, `service_gst`, `service_discount`, `deleted_at`, `created_at`, `updated_at`) VALUES
 (1, '1', 'paint', '1', '1', '100', 3.00, 5.00, 4.00, 12, 2.00, NULL, '2019-04-13 06:36:25', '2019-04-13 06:36:25'),
-(2, '2', 'bjhvxj', '2', '2', '1000', 9.00, 9.00, 0.00, 18, 1.00, NULL, '2019-04-13 09:43:26', '2019-04-13 09:43:26');
+(2, '2', 'bjhvxj', '2', '2', '1000', 9.00, 9.00, 0.00, 18, 1.00, NULL, '2019-04-13 09:43:26', '2019-04-13 09:43:26'),
+(3, '2', 'bjhvxj', '1', '1', '100', 2.00, 3.00, 3.00, 8, 2.00, NULL, '2019-04-17 23:55:39', '2019-04-17 23:55:39');
 
 -- --------------------------------------------------------
 
@@ -803,7 +829,10 @@ CREATE TABLE `supplier_debit_logs` (
 
 INSERT INTO `supplier_debit_logs` (`id`, `supplier_id`, `purchase_invoice_id`, `purchase_id`, `debit_amount`, `credit`, `is_debit`, `comments`, `payment_type`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, 1, 1, 1, 1070.00, NULL, 1, 'dfg', NULL, '2019-04-13 06:32:26', '2019-04-13 06:32:26', NULL),
-(2, 1, 2, 2, 1070.00, NULL, 1, 'dfg', NULL, '2019-04-13 06:59:42', '2019-04-13 06:59:42', NULL);
+(2, 1, 2, 2, 1070.00, NULL, 1, 'dfg', NULL, '2019-04-13 06:59:42', '2019-04-13 06:59:42', NULL),
+(3, 1, 3, 3, 27612.00, NULL, 1, 'dgdfg', NULL, '2019-04-17 05:55:17', '2019-04-17 05:55:17', NULL),
+(4, 1, 3, 4, 46545.00, NULL, 1, 'dgdfg', NULL, '2019-04-17 05:55:17', '2019-04-17 05:55:17', NULL),
+(5, 1, 4, 5, 1070.00, NULL, 1, 'fdsf', NULL, '2019-04-17 23:57:45', '2019-04-17 23:57:45', NULL);
 
 -- --------------------------------------------------------
 
@@ -942,7 +971,10 @@ CREATE TABLE `vehicle_details` (
 --
 
 INSERT INTO `vehicle_details` (`id`, `customer_id`, `workshop_id`, `sale_id`, `vehicle_id`, `vehicle_reg_number`, `model_year`, `brand`, `vin`, `fuel_type`, `engine_number`, `company_name`, `reg_number`, `odometer_reading`, `color`, `key_number`, `due_in`, `due_out`, `model_number`, `advisor`, `notes`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, NULL, NULL, NULL, 'F', '35345', 1, 'fdgfdg', 'CNG', '345345', 'dgd', '2019-04-11', '4353', 'dffdf', '4353', '2019-04-12', '2019-04-13', '1', 'df', 'dfg', '2019-04-13 06:37:50', '2019-04-13 06:37:50', NULL);
+(1, 1, NULL, NULL, NULL, 'F', '35345', 1, 'fdgfdg', 'CNG', '345345', 'dgd', '2019-04-11', '4353', 'dffdf', '4353', '2019-04-12', '2019-04-13', '1', 'df', 'dfg', '2019-04-13 06:37:50', '2019-04-13 06:37:50', NULL),
+(2, 2, NULL, NULL, NULL, '345345', '3434', 1, 'df45', 'Petrol', '34534', '435', '2019-04-16', 'dfg', 'dfg', 'd54645', '2019-04-16', '2019-04-16', '1', 'ddfg', 'dfg', '2019-04-17 00:25:35', '2019-04-17 00:25:35', NULL),
+(3, 3, NULL, NULL, NULL, '34534DF', '345', 1, '46566', 'Disel', '4645', 'dfgfdg', '2019-04-16', '456', 'dfg', 'dfg', '2019-04-16', '2019-04-11', '1', 'dfg', 'dfg', '2019-04-17 05:54:11', '2019-04-17 05:54:11', NULL),
+(4, 4, NULL, NULL, NULL, 'DFG55', '453', 1, '4345', 'Disel', '34534', 'fdgdfg', '2019-04-17', '23432dfd', 'red', '3453', '2019-04-17', '2019-04-17', '1', 'fg', 'df', '2019-04-18 00:00:03', '2019-04-18 00:00:03', NULL);
 
 -- --------------------------------------------------------
 
@@ -1002,10 +1034,81 @@ CREATE TABLE `workshops` (
 --
 
 INSERT INTO `workshops` (`id`, `customer_id`, `is_workshop`, `name`, `reference`, `company`, `gst_no`, `mobile`, `landline`, `email`, `address`, `city`, `state`, `pin`, `vehicle_reg_number`, `model_year`, `company_name`, `model_number`, `brand`, `vin`, `reg_number`, `odometer_reading`, `color`, `fuel_type`, `engine_number`, `key_number`, `due_in`, `due_out`, `status`, `is_complete`, `advisor`, `notes`, `paid_price`, `installmentPayment`, `discount_price`, `balance_price`, `grandTotal`, `serviceGST`, `submited_part`, `others_submited_part`, `workshop_date`, `deleted_at`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, 'Ashutosh Kumar Choubey', 'dfg', 'dfg', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', '2019-04-12', '2019-04-13', 'pending', 0, 'df', 'dfg', 23.00000, 0.00, 0.00, 2945.88, 2945.88, 1, 'xdvdx', NULL, '2019-04-12 18:30:00', NULL, '2019-04-13 06:37:50', '2019-04-13 09:36:55'),
-(2, 1, 0, 'Ashutosh Kumar Choubey', NULL, NULL, '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Complete(Spare Purchase)', 1, NULL, NULL, 0.00000, 0.00, 0.00, 209.72, 209.72, 1, NULL, NULL, '2019-04-13 06:42:46', NULL, '2019-04-13 06:42:46', '2019-04-13 06:50:31'),
-(3, 1, 0, 'Ashutosh Kumar Choubey', 'sdf', 'sf', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, '345', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Complete(Spare Purchase)', 1, NULL, NULL, 0.00000, 0.00, 0.00, 838.88, 838.88, 1, NULL, NULL, '2019-04-11 18:30:00', NULL, '2019-04-13 07:00:43', '2019-04-13 07:00:49'),
-(4, 1, 1, 'Ashutosh Kumar Choubey', 'dfg', 'dfg', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', NULL, NULL, 'pending', 0, 'df', 'dfg', 0.00000, 0.00, 0.00, 1577.80, 1577.80, 1, 'sa', NULL, '2019-04-11 18:30:00', NULL, '2019-04-13 07:06:57', '2019-04-13 09:37:19');
+(1, 1, 1, 'Ashutosh Kumar Choubey', 'dfg', 'dfg', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', '2019-04-12', '2019-04-13', 'pending', 0, 'df', 'dfg', 23.00000, 0.00, 0.00, 98.00, 98.00, 1, 'xdvdx', NULL, '2019-04-12 18:30:00', NULL, '2019-04-13 06:37:50', '2019-04-17 04:40:38'),
+(2, 1, 0, 'fgdgf', '35df', 'dsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '345345', '3434', '435', '1', '1', 'df45', '2019-04-16', 'dfg', 'dfg', 'Petrol', '34534', 'd54645', NULL, NULL, 'pending', 0, 'ddfg', 'dfg', 0.00000, 0.00, 0.00, 109.76, 109.76, 1, 'gsfsd', NULL, '2019-04-15 18:30:00', NULL, '2019-04-13 06:42:46', '2019-04-17 05:30:30'),
+(3, 1, 0, 'Ashutosh Kumar Choubey', 'sdf', 'sf', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, '345', NULL, NULL, '1', '1', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, 'Complete(Spare Purchase)', 1, NULL, NULL, 0.00000, 0.00, 0.00, 419.44, 419.44, 1, NULL, NULL, '2019-04-11 18:30:00', NULL, '2019-04-13 07:00:43', '2019-04-17 04:54:57'),
+(4, 1, 1, 'Ashutosh Kumar Choubey', 'dfg', 'dfg', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', NULL, NULL, 'pending', 0, 'df', 'dfg', 0.00000, 0.00, 0.00, 1577.80, 1577.80, 1, 'sa', NULL, '2019-04-11 18:30:00', NULL, '2019-04-13 07:06:57', '2019-04-13 09:37:19'),
+(5, 1, 1, 'Ashutosh Kumar Choubey', '45', 'sfg', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', NULL, NULL, 'pending', 0, 'df', 'dfg', 43.00000, 0.00, 0.00, 1015.40, 1058.40, 1, 'fg', NULL, '2019-04-15 18:30:00', NULL, '2019-04-16 23:57:36', '2019-04-16 23:57:44'),
+(6, 2, 1, 'fgdgf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '345345', '3434', '435', '1', '1', 'df45', '2019-04-16', 'dfg', 'dfg', 'Petrol', '34534', 'd54645', '2019-04-16', '2019-04-16', 'pending', 0, 'ddfg', 'dfg', 0.00000, 0.00, 0.00, 529.20, 529.20, 0, 'erff', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 00:25:35', '2019-04-17 00:25:42'),
+(7, 1, 1, 'Ashutosh Kumar Choubey', '35', 'rf', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', NULL, NULL, 'pending', 0, 'df', 'dfg', 0.00000, 0.00, 0.00, 0.00, 0.00, 1, 'sdf', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 00:27:11', '2019-04-17 00:27:11'),
+(8, 1, 1, 'Ashutosh Kumar Choubey', '35', 'rf', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', NULL, NULL, 'pending', 0, 'df', 'dfg', 0.00000, 0.00, 0.00, 0.00, 0.00, 1, 'sdf', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 00:30:11', '2019-04-17 00:30:11'),
+(9, 1, 1, 'Ashutosh Kumar Choubey', '35', 'rf', '345', '9658476170', '345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkum', NULL, NULL, NULL, 'F', '35345', 'dgd', '1', '1', 'fdgfdg', '2019-04-11', '4353', 'dffdf', 'CNG', '345345', '4353', NULL, NULL, 'pending', 0, 'df', 'dfg', 0.00000, 0.00, 0.00, 0.00, 0.00, 1, 'sdf', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 00:31:09', '2019-04-17 00:31:09');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `workshops_withoutgsts`
+--
+
+CREATE TABLE `workshops_withoutgsts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `customer_id` int(155) DEFAULT NULL,
+  `is_workshop` int(11) NOT NULL DEFAULT '1' COMMENT '1=>" workshop ",0=>"sale"',
+  `name` varchar(155) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `reference` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `gst_no` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `mobile` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `landline` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `email` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `city` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `state` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `pin` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vehicle_reg_number` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `model_year` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `company_name` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `model_number` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `brand` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `vin` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `reg_number` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `odometer_reading` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `color` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `fuel_type` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `engine_number` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `key_number` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `due_in` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `due_out` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `is_complete` tinyint(1) NOT NULL DEFAULT '0' COMMENT '0=>no,1=>yes',
+  `advisor` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `notes` varchar(155) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `paid_price` double(155,5) DEFAULT '0.00000',
+  `installmentPayment` double(155,2) DEFAULT '0.00',
+  `discount_price` double(155,2) DEFAULT '0.00',
+  `balance_price` double(155,2) DEFAULT '0.00',
+  `grandTotal` double(155,2) NOT NULL DEFAULT '0.00',
+  `serviceGST` tinyint(1) DEFAULT '1',
+  `submited_part` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `others_submited_part` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `workshop_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `workshops_withoutgsts`
+--
+
+INSERT INTO `workshops_withoutgsts` (`id`, `customer_id`, `is_workshop`, `name`, `reference`, `company`, `gst_no`, `mobile`, `landline`, `email`, `address`, `city`, `state`, `pin`, `vehicle_reg_number`, `model_year`, `company_name`, `model_number`, `brand`, `vin`, `reg_number`, `odometer_reading`, `color`, `fuel_type`, `engine_number`, `key_number`, `due_in`, `due_out`, `status`, `is_complete`, `advisor`, `notes`, `paid_price`, `installmentPayment`, `discount_price`, `balance_price`, `grandTotal`, `serviceGST`, `submited_part`, `others_submited_part`, `workshop_date`, `deleted_at`, `created_at`, `updated_at`) VALUES
+(1, 2, 1, 'fgdgf', '35df', 'dsf', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '345345', '3434', '435', '1', '1', 'df45', '2019-04-16', 'dfg', 'dfg', 'Petrol', '34534', 'd54645', NULL, NULL, 'pending', 1, 'ddfg', 'dfg', 0.00000, 0.00, 0.00, 98.00, 98.00, 1, 'gsfsd', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 00:44:17', '2019-04-17 06:32:59'),
+(2, 2, 1, 'ashutosh', '35df', 'dsf', '111', NULL, NULL, NULL, NULL, NULL, NULL, NULL, '123', '3434', '435', '1', '1', 'df45', '2019-04-16', 'dfg', 'dfg', 'Petrol', '34534', 'd54645', NULL, NULL, 'pending', 1, 'ddfg', 'dfg', 0.00000, 28.00, 0.00, 70.00, 98.00, 1, 'gsfsd', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 00:54:00', '2019-04-17 05:31:45'),
+(3, 2, 1, 'fgdgf', 'dfg', 'dfg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '345345', '3434', '435', '1', '1', 'df45', '2019-04-16', 'dfg', 'dfg', 'Petrol', '34534', 'd54645', NULL, NULL, 'pending', 0, 'ddfg', 'dfg', 34.00000, 171.00, 0.00, 285.00, 490.00, 1, 'fdg', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 02:05:27', '2019-04-17 06:06:52'),
+(4, 3, 1, 'wiswa', '36', 'phoenx', '34534dgdg', '34534534534', '45345345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkumarchoubey@gmail,com\r\nplot No-GA,430 Chandrasekharpur, Axis Bank ATM, Sailashree Vihar', NULL, NULL, NULL, '34534DF', '345', 'dfgfdg', '1', '1', '46566', '2019-04-16', '456', 'dfg', 'Disel', '4645', 'dfg', '2019-04-16', '2019-04-11', 'pending', 0, 'dfg', 'dfg', 45.00000, 0.00, 0.00, 151.00, 196.00, 1, NULL, NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 05:54:10', '2019-04-17 05:54:22'),
+(5, 3, 1, 'wiswa', 'dfdf', '234234', '34534dgdg', '34534534534', '45345345345', 'ashutoshkumarchoubey@gmail.com', 'ashutoshkumarchoubey@gmail,com\r\nplot No-GA,430 Chandrasekharpur, Axis Bank ATM, Sailashree Vihar', NULL, NULL, NULL, '34534DF', '345', 'dfgfdg', '1', '1', '46566', '2019-04-16', '456', 'dfg', 'Disel', '4645', 'dfg', NULL, NULL, 'pending', 0, 'dfg', 'dfg', 234.00000, 0.00, 0.00, 67318890.00, 67319124.00, 1, 'ddf', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 05:57:43', '2019-04-17 05:59:21'),
+(6, 2, 1, 'fgdgf', 'dgf', 'dfg', NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, '345345', '3434', '435', '1', '1', 'df45', '2019-04-16', 'dfg', 'dfg', 'Petrol', '34534', 'd54645', NULL, NULL, 'pending', 0, 'ddfg', 'dfg', 0.00000, 0.00, 0.00, 12996.00, 12996.00, 1, 'sdfds', NULL, '2019-04-15 18:30:00', NULL, '2019-04-17 06:01:34', '2019-04-17 06:08:00'),
+(7, 4, 1, 'Mohit Mona', 'dfddf', '46565', 'g4535', '66553', '35345', 'fdhdfh@dfh.dgd', 'dfgdf', NULL, NULL, NULL, 'DFG55', '453', 'fdgdfg', '1', '1', '4345', '2019-04-17', '23432dfd', 'red', 'Disel', '34534', '3453', '2019-04-17', '2019-04-17', 'pending', 0, 'fg', 'df', 300.00000, 0.00, 0.00, 1862.00, 2162.00, 1, 'dfdsf', NULL, '2019-04-16 18:30:00', NULL, '2019-04-18 00:00:02', '2019-04-18 00:02:03');
 
 -- --------------------------------------------------------
 
@@ -1032,9 +1135,10 @@ CREATE TABLE `workshop_products` (
 
 INSERT INTO `workshop_products` (`id`, `product_id`, `workshop_id`, `product_quantity`, `product_price`, `workshop_product_model`, `workshop_product_brand`, `is_returned`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 3, 200.00, 1, 1, 0, '2019-04-13 06:37:50', '2019-04-13 06:37:50'),
-(3, 1, 2, 0, 200.00, 1, 1, 1, '2019-04-13 06:48:01', '2019-04-13 06:58:42'),
 (4, 1, 3, 2, 200.00, 1, 1, 1, '2019-04-13 07:00:43', '2019-04-13 07:04:53'),
-(5, 1, 4, 3, 200.00, 1, 1, 0, '2019-04-13 07:06:57', '2019-04-13 07:06:57');
+(5, 1, 4, 3, 200.00, 1, 1, 0, '2019-04-13 07:06:57', '2019-04-13 07:06:57'),
+(6, 1, 5, 2, 200.00, 1, 1, 0, '2019-04-16 23:57:36', '2019-04-16 23:57:36'),
+(11, 1, 2, 0, 200.00, 1, 1, 0, '2019-04-17 04:29:34', '2019-04-17 04:29:34');
 
 -- --------------------------------------------------------
 
@@ -1061,7 +1165,81 @@ CREATE TABLE `workshop_products_estimateds` (
 
 INSERT INTO `workshop_products_estimateds` (`id`, `product_id_es`, `workshop_id_es`, `product_quantity_es`, `product_price_es`, `workshop_product_model_es`, `workshop_product_brand_es`, `is_returned_es`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 10, 200.00, 1, 1, 0, '2019-04-13 06:37:50', '2019-04-13 06:37:50'),
-(2, 1, 4, 4, 200.00, 1, 1, 0, '2019-04-13 07:06:57', '2019-04-13 07:06:57');
+(2, 1, 4, 4, 200.00, 1, 1, 0, '2019-04-13 07:06:57', '2019-04-13 07:06:57'),
+(3, 1, 5, 2, 200.00, 1, 1, 0, '2019-04-16 23:57:36', '2019-04-16 23:57:36'),
+(4, 1, 6, 2, 200.00, 1, 1, 0, '2019-04-17 00:25:35', '2019-04-17 00:25:35');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `workshop_products_estimateds_withoutgsts`
+--
+
+CREATE TABLE `workshop_products_estimateds_withoutgsts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `product_id_es` int(11) NOT NULL,
+  `workshop_id_es` int(11) NOT NULL,
+  `product_quantity_es` bigint(11) DEFAULT NULL,
+  `product_price_es` float(100,2) DEFAULT NULL,
+  `workshop_product_model_es` int(100) DEFAULT NULL,
+  `workshop_product_brand_es` int(100) DEFAULT NULL,
+  `is_returned_es` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `workshop_products_estimateds_withoutgsts`
+--
+
+INSERT INTO `workshop_products_estimateds_withoutgsts` (`id`, `product_id_es`, `workshop_id_es`, `product_quantity_es`, `product_price_es`, `workshop_product_model_es`, `workshop_product_brand_es`, `is_returned_es`, `created_at`, `updated_at`) VALUES
+(1, 1, 9, 2, 200.00, 1, 1, 0, '2019-04-17 00:31:09', '2019-04-17 00:31:09'),
+(2, 1, 1, 5, 200.00, 1, 1, 0, '2019-04-17 00:44:18', '2019-04-17 00:44:18'),
+(3, 1, 2, 5, 200.00, 1, 1, 0, '2019-04-17 00:54:00', '2019-04-17 00:54:00'),
+(4, 1, 3, 2, 200.00, 1, 1, 0, '2019-04-17 02:05:27', '2019-04-17 02:05:27'),
+(5, 1, 5, 343223, 200.00, 1, 1, 0, '2019-04-17 05:57:44', '2019-04-17 05:57:44'),
+(6, 2, 5, 234, 200.00, 2, 2, 0, '2019-04-17 05:57:44', '2019-04-17 05:57:44'),
+(7, 1, 6, 5, 200.00, 1, 1, 0, '2019-04-17 06:01:35', '2019-04-17 06:01:35'),
+(8, 1, 7, 5, 200.00, 1, 1, 0, '2019-04-18 00:00:02', '2019-04-18 00:00:02');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `workshop_products_withoutgsts`
+--
+
+CREATE TABLE `workshop_products_withoutgsts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `product_id` int(11) NOT NULL,
+  `workshop_id` int(11) NOT NULL,
+  `product_quantity` int(11) DEFAULT NULL,
+  `product_price` float(100,2) DEFAULT NULL,
+  `workshop_product_model` int(100) DEFAULT NULL,
+  `workshop_product_brand` int(100) DEFAULT NULL,
+  `is_returned` tinyint(1) NOT NULL DEFAULT '0',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `workshop_products_withoutgsts`
+--
+
+INSERT INTO `workshop_products_withoutgsts` (`id`, `product_id`, `workshop_id`, `product_quantity`, `product_price`, `workshop_product_model`, `workshop_product_brand`, `is_returned`, `created_at`, `updated_at`) VALUES
+(1, 1, 8, 0, 200.00, 1, 1, 0, '2019-04-17 00:30:11', '2019-04-17 00:30:11'),
+(2, 1, 9, 0, 200.00, 1, 1, 0, '2019-04-17 00:31:09', '2019-04-17 00:31:09'),
+(5, 1, 3, 0, 200.00, 1, 1, 0, '2019-04-17 02:05:27', '2019-04-17 02:05:27'),
+(9, 1, 2, 0, 200.00, 1, 1, 0, '2019-04-17 04:35:12', '2019-04-17 04:35:12'),
+(10, 1, 1, 0, 200.00, 1, 1, 0, '2019-04-17 04:40:31', '2019-04-17 04:40:31'),
+(11, 1, 4, 0, 200.00, 1, 1, 0, '2019-04-17 05:54:10', '2019-04-17 05:54:10'),
+(12, 1, 5, 2, 200.00, 1, 1, 0, '2019-04-17 05:57:43', '2019-04-17 05:57:43'),
+(13, 2, 5, 3, 200.00, 2, 2, 0, '2019-04-17 05:57:43', '2019-04-17 05:57:43'),
+(16, 2, 6, 10, 200.00, 2, 2, 0, '2019-04-17 06:07:53', '2019-04-17 06:07:53'),
+(17, 1, 6, 10, 200.00, 1, 1, 0, '2019-04-17 06:07:53', '2019-04-17 06:07:53'),
+(18, 2, 6, 20, 200.00, 2, 2, 0, '2019-04-17 06:07:53', '2019-04-17 06:07:53'),
+(19, 1, 6, 20, 200.00, 1, 1, 0, '2019-04-17 06:07:54', '2019-04-17 06:07:54'),
+(20, 1, 7, 2, 200.00, 1, 1, 0, '2019-04-18 00:00:02', '2019-04-18 00:00:02'),
+(21, 2, 7, 3, 200.00, 2, 2, 0, '2019-04-18 00:00:02', '2019-04-18 00:00:02');
 
 -- --------------------------------------------------------
 
@@ -1088,7 +1266,47 @@ CREATE TABLE `workshop_services` (
 
 INSERT INTO `workshop_services` (`id`, `service_type_id`, `service_id`, `workshop_id`, `service_quantity`, `workshop_service_model`, `workshop_service_brand`, `service_price`, `created_at`, `updated_at`) VALUES
 (1, 1, 1, 1, 1, 1, 1, 100.00, '2019-04-13 06:37:50', '2019-04-13 06:37:50'),
-(2, 1, 1, 4, 1, 1, 1, 100.00, '2019-04-13 07:06:57', '2019-04-13 07:06:57');
+(2, 1, 1, 4, 1, 1, 1, 100.00, '2019-04-13 07:06:57', '2019-04-13 07:06:57'),
+(3, 1, 1, 5, 1, 1, 1, 100.00, '2019-04-16 23:57:36', '2019-04-16 23:57:36'),
+(4, 1, 1, 5, 1, 1, 1, 100.00, '2019-04-16 23:57:36', '2019-04-16 23:57:36'),
+(5, 1, 1, 6, 1, 1, 1, 100.00, '2019-04-17 00:25:35', '2019-04-17 00:25:35'),
+(10, 1, 1, 2, 1, 1, 1, 100.00, '2019-04-17 04:29:34', '2019-04-17 04:29:34');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `workshop_services_withoutgsts`
+--
+
+CREATE TABLE `workshop_services_withoutgsts` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `service_type_id` int(100) DEFAULT NULL,
+  `service_id` int(11) NOT NULL,
+  `workshop_id` int(11) NOT NULL,
+  `service_quantity` int(11) DEFAULT '1',
+  `workshop_service_model` int(100) DEFAULT NULL,
+  `workshop_service_brand` int(100) DEFAULT NULL,
+  `service_price` float(100,2) DEFAULT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `workshop_services_withoutgsts`
+--
+
+INSERT INTO `workshop_services_withoutgsts` (`id`, `service_type_id`, `service_id`, `workshop_id`, `service_quantity`, `workshop_service_model`, `workshop_service_brand`, `service_price`, `created_at`, `updated_at`) VALUES
+(1, 1, 1, 9, 1, 1, 1, 100.00, '2019-04-17 00:31:09', '2019-04-17 00:31:09'),
+(4, 1, 1, 3, 1, 1, 1, 100.00, '2019-04-17 02:05:27', '2019-04-17 02:05:27'),
+(8, 1, 1, 2, 1, 1, 1, 100.00, '2019-04-17 04:35:12', '2019-04-17 04:35:12'),
+(9, 1, 1, 1, 1, 1, 1, 100.00, '2019-04-17 04:40:31', '2019-04-17 04:40:31'),
+(10, 1, 1, 4, 1, 1, 1, 100.00, '2019-04-17 05:54:10', '2019-04-17 05:54:10'),
+(11, 1, 1, 4, 1, 1, 1, 100.00, '2019-04-17 05:54:10', '2019-04-17 05:54:10'),
+(12, 1, 1, 5, 1, 1, 1, 100.00, '2019-04-17 05:57:44', '2019-04-17 05:57:44'),
+(14, 1, 1, 6, 1, 1, 1, 100.00, '2019-04-17 06:07:54', '2019-04-17 06:07:54'),
+(15, 1, 1, 6, 1, 1, 1, 100.00, '2019-04-17 06:07:54', '2019-04-17 06:07:54'),
+(16, 1, 1, 7, 1, 1, 1, 100.00, '2019-04-18 00:00:02', '2019-04-18 00:00:02'),
+(17, 2, 3, 7, 1, 1, 1, 100.00, '2019-04-18 00:00:02', '2019-04-18 00:00:02');
 
 --
 -- Indexes for dumped tables
@@ -1306,6 +1524,12 @@ ALTER TABLE `workshops`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `workshops_withoutgsts`
+--
+ALTER TABLE `workshops_withoutgsts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `workshop_products`
 --
 ALTER TABLE `workshop_products`
@@ -1318,9 +1542,27 @@ ALTER TABLE `workshop_products_estimateds`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `workshop_products_estimateds_withoutgsts`
+--
+ALTER TABLE `workshop_products_estimateds_withoutgsts`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `workshop_products_withoutgsts`
+--
+ALTER TABLE `workshop_products_withoutgsts`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `workshop_services`
 --
 ALTER TABLE `workshop_services`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `workshop_services_withoutgsts`
+--
+ALTER TABLE `workshop_services_withoutgsts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -1343,13 +1585,13 @@ ALTER TABLE `credit_debit_details`
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `customer_debit_logs`
 --
 ALTER TABLE `customer_debit_logs`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `documentations`
@@ -1415,7 +1657,7 @@ ALTER TABLE `modals`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product_saled_logs`
@@ -1427,13 +1669,13 @@ ALTER TABLE `product_saled_logs`
 -- AUTO_INCREMENT for table `purchases`
 --
 ALTER TABLE `purchases`
-  MODIFY `id` int(155) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(155) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `purchase_invoices`
 --
 ALTER TABLE `purchase_invoices`
-  MODIFY `id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `purchase_returns`
@@ -1463,7 +1705,7 @@ ALTER TABLE `sales`
 -- AUTO_INCREMENT for table `services`
 --
 ALTER TABLE `services`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `service_names`
@@ -1499,7 +1741,7 @@ ALTER TABLE `suppliers`
 -- AUTO_INCREMENT for table `supplier_debit_logs`
 --
 ALTER TABLE `supplier_debit_logs`
-  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `testing`
@@ -1523,31 +1765,55 @@ ALTER TABLE `user_details`
 -- AUTO_INCREMENT for table `vehicle_details`
 --
 ALTER TABLE `vehicle_details`
-  MODIFY `id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(155) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `workshops`
 --
 ALTER TABLE `workshops`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+--
+-- AUTO_INCREMENT for table `workshops_withoutgsts`
+--
+ALTER TABLE `workshops_withoutgsts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `workshop_products`
 --
 ALTER TABLE `workshop_products`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `workshop_products_estimateds`
 --
 ALTER TABLE `workshop_products_estimateds`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT for table `workshop_products_estimateds_withoutgsts`
+--
+ALTER TABLE `workshop_products_estimateds_withoutgsts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `workshop_products_withoutgsts`
+--
+ALTER TABLE `workshop_products_withoutgsts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `workshop_services`
 --
 ALTER TABLE `workshop_services`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- AUTO_INCREMENT for table `workshop_services_withoutgsts`
+--
+ALTER TABLE `workshop_services_withoutgsts`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

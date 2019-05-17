@@ -196,20 +196,20 @@ border-radius: 15px 50px;
 	 		$sparPriceAfterDiscountTotal+=(($value->UnitExitPrice)-($value->UnitExitPrice)*$value->discount_value/100)*$value->product_quantity;
 	 		$sl=$sl+1;
 	 		// echo $sl;
-	 		$total_sgst_amount=($sparePriceAfterDiscountForUnit)*$value->Productsgst/100;
-	 		$total_cgst_amount=($sparePriceAfterDiscountForUnit)*$value->Productcgst/100;
-	 		$total_igst_amount=($sparePriceAfterDiscountForUnit)*$value->Productigst/100;
+	 		$total_sgst_amount=($sparePriceAfterDiscountForUnit)*0/100;
+	 		$total_cgst_amount=($sparePriceAfterDiscountForUnit)*0/100;
+	 		$total_igst_amount=($sparePriceAfterDiscountForUnit)*0/100;
 	 		// $total_price_final= $sparPriceAfterDiscountTotal+ $total_sgst_amount+$total_cgst_amount+ $total_igst_amount;
 	 		$total_retail_price=($value->product_quantity*$sparePriceAfterDiscountForUnit);
 	 		$total_price_final= $sparPriceAfterDiscountTotal_forUnit+ $total_sgst_amount*$value->product_quantity+$total_cgst_amount*$value->product_quantity+ $total_igst_amount*$value->product_quantity;
 	 		// echo $sparPriceAfterDiscountTotal_forUnit."+ ".$total_sgst_amount*$value->product_quantity."+".$total_cgst_amount*$value->product_quantity."+". $total_igst_amount*$value->product_quantity;
 	 		// echo "<br/>";
 	 		@endphp
-	 		<td>{{$value->Productsgst}}</td>
+	 		<td>{{0}}</td>
 	 		<td>@php echo $total_sgst_amount*$value->product_quantity @endphp</td>
-	 		<td>{{ $value->Productcgst }}</td>
+	 		<td>{{ 0 }}</td>
 	 		<td>@php echo $total_cgst_amount*$value->product_quantity @endphp</td>
-	 		<td>{{ $value->Productigst}}</td>
+	 		<td>{{ 0}}</td>
 	 		<td>@php echo $total_igst_amount*$value->product_quantity @endphp</td>
 	 		<td>@php echo $total_price_final @endphp</td>
 	 		@php 
@@ -243,20 +243,20 @@ border-radius: 15px 50px;
 	 		$sparPriceAfterDiscountTotal+=(($value->UnitExitPrice)-($value->UnitExitPrice)*$value->discount_value/100)*$value->product_quantity_es;
 	 		$sl=$sl+1;
 	 		// echo $sl;
-	 		$total_sgst_amount=($sparePriceAfterDiscountForUnit)*$value->Productsgst/100;
-	 		$total_cgst_amount=($sparePriceAfterDiscountForUnit)*$value->Productcgst/100;
-	 		$total_igst_amount=($sparePriceAfterDiscountForUnit)*$value->Productigst/100;
+	 		$total_sgst_amount=($sparePriceAfterDiscountForUnit)*0/100;
+	 		$total_cgst_amount=($sparePriceAfterDiscountForUnit)*0/100;
+	 		$total_igst_amount=($sparePriceAfterDiscountForUnit)*0/100;
 	 		// $total_price_final= $sparPriceAfterDiscountTotal+ $total_sgst_amount+$total_cgst_amount+ $total_igst_amount;
 	 		$total_retail_price=($value->product_quantity_es*$sparePriceAfterDiscountForUnit);
 	 		$total_price_final= $sparPriceAfterDiscountTotal_forUnit+ $total_sgst_amount*$value->product_quantity_es+$total_cgst_amount*$value->product_quantity_es+ $total_igst_amount*$value->product_quantity_es;
 	 		// echo $sparPriceAfterDiscountTotal_forUnit."+ ".$total_sgst_amount*$value->product_quantity_es."+".$total_cgst_amount*$value->product_quantity_es."+". $total_igst_amount*$value->product_quantity_es;
 	 		// echo "<br/>";
 	 		@endphp
-	 		<td>{{$value->Productsgst}}</td>
+	 		<td>{{0}}</td>
 	 		<td>@php echo $total_sgst_amount*$value->product_quantity_es @endphp</td>
-	 		<td>{{ $value->Productcgst }}</td>
+	 		<td>{{ 0 }}</td>
 	 		<td>@php echo $total_cgst_amount*$value->product_quantity_es @endphp</td>
-	 		<td>{{ $value->Productigst}}</td>
+	 		<td>{{ 0}}</td>
 	 		<td>@php echo $total_igst_amount*$value->product_quantity_es @endphp</td>
 	 		<td>@php echo $total_price_final @endphp</td>
 	 		@php 
@@ -310,7 +310,7 @@ border-radius: 15px 50px;
 	 	@foreach($WorkshopService as $value)
 	 	<tr>
 	 		@php
-	 		$TotalPriceForOneService=($value->service_price-$value->service_price*$value->service_discount/100)+((($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_igst)/100)+((($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_cgst)/100)+((($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_sgst)/100);
+	 		$TotalPriceForOneService=($value->service_price-$value->service_price*$value->service_discount/100)+((($value->service_price-$value->service_price*$value->service_discount/100)*0)/100)+((($value->service_price-$value->service_price*$value->service_discount/100)*0)/100)+((($value->service_price-$value->service_price*$value->service_discount/100)*0)/100);
 	 		@endphp
 	 		<td>{{ $sl2 }}</td>
 	 		<td>{{$value->service_name }}</td>
@@ -322,25 +322,25 @@ border-radius: 15px 50px;
 	 		<td>{{ $value->service_discount}}</td>
 	 		<td>{{ $value->service_price-$value->service_price*$value->service_discount/100 }}</td>
 	 		{{-- <td></td> --}}
-	 		<td>{{$value->service_sgst }}</td>
-	 		<td>{{ (($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_sgst)/100 }}</td>
-	 		<td>{{$value->service_cgst }}</td>
-	 		<td>{{ (($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_cgst)/100 }}</td>
-	 		<td>{{ $value->service_igst }}</td>
-	 		<td> {{ (($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_igst)/100 }}</td>
+	 		<td>{{0 }}</td>
+	 		<td>{{ (($value->service_price-$value->service_price*$value->service_discount/100)*0)/100 }}</td>
+	 		<td>{{0 }}</td>
+	 		<td>{{ (($value->service_price-$value->service_price*$value->service_discount/100)*0)/100 }}</td>
+	 		<td>{{ 0 }}</td>
+	 		<td> {{ (($value->service_price-$value->service_price*$value->service_discount/100)*0)/100 }}</td>
 	 		<td>{{ $TotalPriceForOneService }}</td>
 	 		@php
 	 		$TotalServicePrice+=$value->service_price-$value->service_price*$value->service_discount/100;
 	 		$GrandTotalPriceForOneService+=$TotalPriceForOneService;
 	 		$sl2+=$sl2+1;
-			$IgstAmount+=(($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_igst)/100;
-			$CgstAmount+=(($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_cgst)/100;
-			$SgstAmount+=(($value->service_price-$value->service_price*$value->service_discount/100)*$value->service_sgst)/100;
+			$IgstAmount+=(($value->service_price-$value->service_price*$value->service_discount/100)*0)/100;
+			$CgstAmount+=(($value->service_price-$value->service_price*$value->service_discount/100)*0)/100;
+			$SgstAmount+=(($value->service_price-$value->service_price*$value->service_discount/100)*0)/100;
 	 		$serviceAfterDiscount=$value->service_price-$value->service_price*$value->service_discount/100;
 	 		$Total_Taxable_price_service+=$value->service_price;
-            $Total_sgst_service+=$value->service_sgst;
-            $Total_cgst_service+=$value->service_cgst;
-            $Total_igst_service+=$value->service_igst;
+            $Total_sgst_service+=0;
+            $Total_cgst_service+=0;
+            $Total_igst_service+=0;
             $Total_price_service+=$Total_Taxable_price_service+$Total_sgst_service+$Total_cgst_service+$Total_igst_service;
             // $Total_service_gst=$Total_sgst_service+$Total_cgst_service+$Total_igst_service;
 	 		@endphp
@@ -421,7 +421,7 @@ $forPay=($GrandTotalPriceForOneService+$TotaPart);
 	 	</tr>
 	 	<tr>
 	 		<td colspan="6" height="80px">Customer's Signature</td>
-	 		<td colspan="3">For Dynamic Auto Mobile<br><br><br>
+	 		<td colspan="3">For Dynamic Auto Mobile <br><br><br>
 	 			Authorised Signature
 	 		</td>
 	 	</tr>
@@ -431,7 +431,7 @@ $forPay=($GrandTotalPriceForOneService+$TotaPart);
 <script type="text/javascript">
 	$.ajax({
         type:"POST",
-        url: "{{url('/')}}/ajax/updateWorkshopBalance",
+        url: "{{url('/')}}/ajax/updateWorkshopBalanceWithoutGst",
         data:{
           "_token": "{{ csrf_token() }}",
           workshop_id:{{ $id }},

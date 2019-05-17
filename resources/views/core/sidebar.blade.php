@@ -53,6 +53,27 @@
         </ul>
       </li>
 
+ <li class="nav-item nav-dropdown">
+        <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-bullhorn"></i> Workshop WGst</a>
+        <ul class="nav-dropdown-items">
+           
+          <li class="nav-item">
+            <a class="nav-link" href="{{asset('/SaiAutoCare/workshopWTax/add')}}"><i class="fa fa-user"></i> Add</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{asset('/SaiAutoCare/workshopWTax/search')}}"><i class="fa fa-search"></i> Search  </a>
+          </li>
+          <li class="nav-item" style="display: none">
+            <a class="nav-link" href="{{asset('/SaiAutoCare/workshop/delete')}}"><i class="icon-trash"></i> Trash  </a>
+          </li>
+         
+           <li class="nav-item" style="display: none">
+            <a class="nav-link" href="{{asset('/SaiAutoCare/sale/add')}}"><i class="fa fa-dot-circle-o" aria-hidden="true"></i>Sale Spare</a>
+          </li>
+          
+        </ul>
+      </li>
+
       <li class="nav-item nav-dropdown">
         <a class="nav-link nav-dropdown-toggle" href="#"><i class="fa fa-tty" aria-hidden="true"></i>Estimate</a>
         <ul class="nav-dropdown-items">
